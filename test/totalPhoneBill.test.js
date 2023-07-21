@@ -1,21 +1,16 @@
 import assert from "assert";
 import totalPhoneBill from "../totalPhoneBill.js";
 
-describe ("Testing the mostExpensiveDepartment function", function(){
-    it ("it should return the name of the most expensive department from sales data'", function(){
-        assert.equal('outdoor', mostProfitableDepartment(salesData), "Most profitable department is 'outdoor' for dataset 1");
+describe ("Testing the totalPhoneBill function", function(){
+  it ("it should return R7.45,when it called with a 'call, sms, call, sms, sms'", function(){
+      assert.equal('R7.45', totalPhoneBill('call, sms, call, sms, sms'));
 
-
+  });
+  it ("it should return R3.40,when it called with a 'call, sms'", function(){
+      assert.equal('R3.40', totalPhoneBill('call, sms'));
+    
     });
-    it ("it should return the name of the most expensive department from sales data 2'", function(){
-        assert.equal('outdoor', mostProfitableDepartment(salesData), "Most profitable department is 'outdoor' for dataset 2");
-      });
-      it ("it should return the name of the most expensive day from sales data'", function(){
-        assert.equal('Thursday', mostProfitableDay(salesData), "Most profitable day is 'Thursday' for dataset 1");
-
-      });
-      it ("it should return the name of the most expensive day from sales data'", function(){
-        assert.equal('Thursday', mostProfitableDay(salesData), "Most profitable day is 'Thursday' for dataset 2");
- 
+    it ("it should return R1.30,when it called with a 'call, sms'", function(){
+      assert.equal('R1.30', totalPhoneBill('sms, sms'));
     });
-});
+  });
